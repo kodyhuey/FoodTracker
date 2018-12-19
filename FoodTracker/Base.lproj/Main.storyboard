@@ -36,25 +36,54 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fei-0Q-G5Q">
                                         <rect key="frame" x="0.0" y="66.333333333333343" width="151" height="30"/>
                                         <state key="normal" title="Set Default Label Text"/>
+                                        <connections>
+                                            <action selector="setDefaultLabelText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MOw-bS-v5g"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="gyN-eX-73s" secondAttribute="trailing" id="ePs-Z9-Qmk"/>
                                 </constraints>
                             </stackView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="XTs-mf-ZFR">
+                                <rect key="frame" x="16" y="168" width="320" height="320"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="XTs-mf-ZFR" secondAttribute="height" multiplier="1:1" id="3qs-0g-Q27"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="TX0-Re-p2x" appends="YES" id="sP6-06-QeI"/>
+                                </connections>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="XTs-mf-ZFR" firstAttribute="top" secondItem="hLW-oO-1i6" secondAttribute="bottom" constant="7.6699999999999999" id="1EC-ht-bXv"/>
+                            <constraint firstItem="XTs-mf-ZFR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="7Dg-uM-q9b"/>
                             <constraint firstItem="hLW-oO-1i6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="aQ5-WE-sAU"/>
                             <constraint firstItem="hLW-oO-1i6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="ifW-aF-oR3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XTs-mf-ZFR" secondAttribute="trailing" constant="39" id="vEP-zZ-dyP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hLW-oO-1i6" secondAttribute="trailing" constant="16" id="wjq-Yn-0bl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="mealNameLabel" destination="Z1D-k1-ztf" id="Jdm-vH-zmT"/>
+                        <outlet property="nameTextField" destination="gyN-eX-73s" id="kcx-UM-Mgg"/>
+                        <outlet property="photoImageView" destination="XTs-mf-ZFR" id="2hw-lb-EXc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="TX0-Re-p2x">
+                    <connections>
+                        <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="XG8-3q-42d"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+            <point key="canvasLocation" x="136.80000000000001" y="133.00492610837438"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="defaultPhoto" width="500" height="500"/>
+    </resources>
 </document>
